@@ -3,46 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>밀점 SMP | 대구 두피문신 전문</title>
   <meta name="description" content="대구 SMP 두피문신 전문 밀점. 정수리, 헤어라인, 가르마 고민 맞춤 상담." />
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", sans-serif;
       background: #111111;
       color: #ffffff;
       word-break: keep-all;
     }
 
-    a { text-decoration: none; }
+    a {
+      text-decoration: none;
+    }
 
-    .section { padding: 80px 20px; }
+    .section {
+      padding: 80px 20px;
+    }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
     }
 
+    .center {
+      text-align: center;
+    }
+
     .hero {
+      position: relative;
       min-height: 90vh;
       display: flex;
       align-items: center;
       text-align: center;
       background:
-        radial-gradient(circle at top right, rgba(245, 158, 11, 0.22), transparent 35%),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.26), transparent 36%),
         linear-gradient(180deg, #111111 0%, #1c1c1c 100%);
+    }
+
+    .profile-photo {
+      position: absolute;
+      top: 32px;
+      right: 40px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fbbf24;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+      background: #1c1c1c;
     }
 
     .badge {
       display: inline-block;
       padding: 10px 18px;
       border-radius: 999px;
-      background: rgba(245, 158, 11, 0.15);
+      background: rgba(245, 158, 11, 0.16);
       color: #fbbf24;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 24px;
     }
 
@@ -66,7 +91,9 @@
       font-size: 22px;
     }
 
-    p { line-height: 1.75; }
+    p {
+      line-height: 1.75;
+    }
 
     .hero p {
       max-width: 720px;
@@ -87,42 +114,45 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 58px;
+      min-height: 58px;
       padding: 0 30px;
       border-radius: 18px;
-      font-weight: 800;
+      font-weight: 850;
       font-size: 16px;
       transition: 0.25s;
+      cursor: pointer;
     }
 
     .btn-primary {
       background: #fbbf24;
-      color: #050505;
+      color: #111111;
     }
 
-    .btn-primary:hover { background: #f59e0b; }
+    .btn-primary:hover {
+      background: #f59e0b;
+    }
 
     .btn-kakao {
       background: #FEE500;
       color: #191919;
     }
 
-    .btn-kakao:hover { background: #f7d900; }
+    .btn-kakao:hover {
+      background: #f7d900;
+    }
 
     .btn-outline {
       border: 1px solid rgba(255,255,255,0.25);
-      color: #fff;
+      color: #ffffff;
     }
 
     .btn-outline:hover {
       background: rgba(255,255,255,0.1);
     }
 
-    .center { text-align: center; }
-
     .sub {
       color: #fbbf24;
-      font-weight: 800;
+      font-weight: 850;
       margin-bottom: 10px;
     }
 
@@ -149,6 +179,10 @@
     .card p {
       color: #cfcfcf;
       margin-bottom: 0;
+    }
+
+    .dark-box {
+      background: #1c1c1c;
     }
 
     .gallery {
@@ -178,8 +212,6 @@
       transform: scale(1.06);
     }
 
-    .dark-box { background: #1c1c1c; }
-
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -188,10 +220,11 @@
     }
 
     .step {
-      background: #1c1c1c;
+      background: #111111;
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 26px;
       padding: 28px;
+      text-align: left;
     }
 
     .num {
@@ -199,12 +232,17 @@
       height: 38px;
       border-radius: 50%;
       background: #fbbf24;
-      color: #050505;
+      color: #111111;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 900;
       margin-bottom: 18px;
+    }
+
+    .step p {
+      color: #cfcfcf;
+      margin-bottom: 0;
     }
 
     .faq {
@@ -225,9 +263,9 @@
       padding: 22px;
       background: none;
       border: none;
-      color: #fff;
+      color: #ffffff;
       font-size: 17px;
-      font-weight: 800;
+      font-weight: 850;
       text-align: left;
       cursor: pointer;
       display: flex;
@@ -240,52 +278,115 @@
       padding: 0 22px 22px;
       color: #cfcfcf;
       line-height: 1.7;
+      text-align: left;
     }
 
     .faq-item.active .faq-answer {
       display: block;
     }
 
+    .light-section {
+      background: #f8f8f8;
+      color: #111111;
+    }
+
+    .light-section .sub {
+      color: #b7791f;
+    }
+
+    .light-section .desc {
+      color: #555555;
+    }
+
+    .light-section .card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+    }
+
+    .light-section .card p {
+      color: #555555;
+    }
+
     .cta {
-      background: #fbbf24;
-      color: #050505;
+      background: #f8f8f8;
+      color: #111111;
       border-radius: 34px;
       padding: 56px 24px;
       text-align: center;
     }
 
     .cta p {
-      color: #333;
+      color: #444444;
       font-size: 18px;
+      margin-bottom: 0;
     }
 
     footer {
       padding: 34px 20px;
       text-align: center;
-      color: #777;
+      color: #888888;
       border-top: 1px solid rgba(255,255,255,0.1);
       font-size: 14px;
+      background: #111111;
     }
 
     @media (max-width: 900px) {
-      .cards, .steps { grid-template-columns: 1fr 1fr; }
-      .gallery { grid-template-columns: 1fr 1fr; }
+      .cards,
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 560px) {
-      .cards, .steps { grid-template-columns: 1fr; }
-      .section { padding: 64px 18px; }
-      .btn { width: 100%; }
-      .hero { min-height: auto; padding: 80px 0; }
+      .section {
+        padding: 64px 18px;
+      }
+
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0;
+      }
+
+      .profile-photo {
+        position: static;
+        width: 88px;
+        height: 88px;
+        margin: 0 auto 24px;
+        display: block;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
     }
   </style>
 </head>
 
 <body>
   <section class="hero section">
+    <img class="profile-photo" src="images/profile.jpg" alt="밀점 SMP 프로필 사진" />
+
     <div class="container">
       <div class="badge">대구 SMP 두피문신 전문</div>
-      <h1>비어 보이는 두피,<br />자연스럽게 채우다</h1>
+
+      <h1>
+        비어 보이는 두피,<br />
+        자연스럽게 채우다
+      </h1>
+
       <p>
         밀점 SMP는 정수리, 헤어라인, 가르마 고민을 가진 고객님께
         두피 상태에 맞는 맞춤 상담과 자연스러운 SMP 디자인을 제안합니다.
@@ -295,9 +396,11 @@
         <a class="btn btn-kakao" href="http://pf.kakao.com/_PGZcn/chat" target="_blank">
           카카오톡 상담하기
         </a>
+
         <a class="btn btn-primary" href="https://www.instagram.com/miljeom.smp/" target="_blank">
           시술 사례 보기
         </a>
+
         <a class="btn btn-outline" href="tel:010-8359-1670">
           전화 상담하기
         </a>
@@ -305,7 +408,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section light-section">
     <div class="container center">
       <div class="sub">이런 분께 추천드립니다</div>
       <h2>두피가 비어 보이는 순간이 신경 쓰이신다면</h2>
@@ -318,10 +421,12 @@
           <h3>정수리 고민</h3>
           <p>사진을 찍을 때 정수리 부분이 유독 비어 보이는 분께 추천드립니다.</p>
         </div>
+
         <div class="card">
           <h3>헤어라인 고민</h3>
           <p>M자 라인, 이마 라인, 비어 보이는 앞머리 라인이 고민인 분께 추천드립니다.</p>
         </div>
+
         <div class="card">
           <h3>가르마 고민</h3>
           <p>가르마가 넓어 보여 스타일링이 어렵거나 두피가 도드라져 보이는 분께 추천드립니다.</p>
@@ -335,7 +440,7 @@
       <div class="sub">GALLERY</div>
       <h2>밀점 SMP 시술 사례</h2>
       <p class="desc">
-        아래 이미지 8장은 GitHub에 업로드한 시술 이미지로 자동 표시됩니다.
+        아래 8장의 이미지는 GitHub에 업로드한 시술 이미지로 자동 표시됩니다.
       </p>
 
       <div class="gallery">
@@ -361,10 +466,12 @@
           <h3>자연스러운 밀도</h3>
           <p>기존 모발과 어색하지 않도록 점의 크기, 간격, 농도를 세밀하게 조절합니다.</p>
         </div>
+
         <div class="card">
           <h3>개인 맞춤 디자인</h3>
           <p>두상, 모발 방향, 탈모 범위에 따라 과하지 않은 맞춤 디자인을 제안합니다.</p>
         </div>
+
         <div class="card">
           <h3>상담 중심 진행</h3>
           <p>무리한 권유보다 현재 상태에 맞는 방향을 먼저 안내드립니다.</p>
@@ -384,16 +491,19 @@
           <h3>상담 신청</h3>
           <p>카카오톡, 인스타그램 DM 또는 전화로 상담을 신청합니다.</p>
         </div>
+
         <div class="step">
           <div class="num">2</div>
           <h3>두피 확인</h3>
           <p>현재 두피 상태와 고민 부위를 확인합니다.</p>
         </div>
+
         <div class="step">
           <div class="num">3</div>
           <h3>맞춤 안내</h3>
           <p>필요한 회차, 디자인, 관리 방법을 안내드립니다.</p>
         </div>
+
         <div class="step">
           <div class="num">4</div>
           <h3>시술 진행</h3>
@@ -403,42 +513,57 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section light-section">
     <div class="container center">
       <div class="sub">FAQ</div>
       <h2>자주 묻는 질문</h2>
 
       <div class="faq">
         <div class="faq-item active">
-          <button class="faq-question">SMP 두피문신은 자연스럽게 보이나요?<span>+</span></button>
+          <button class="faq-question">
+            SMP 두피문신은 자연스럽게 보이나요?
+            <span>+</span>
+          </button>
           <div class="faq-answer">
             밀점은 두피 상태, 모발 밀도, 헤어라인 흐름을 먼저 확인한 뒤 점의 크기와 농도를 조절해 자연스러운 밀도 표현을 목표로 시술합니다.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">시술은 몇 회 정도 필요한가요?<span>+</span></button>
+          <button class="faq-question">
+            시술은 몇 회 정도 필요한가요?
+            <span>+</span>
+          </button>
           <div class="faq-answer">
             두피 상태, 탈모 범위, 원하는 밀도에 따라 달라질 수 있습니다. 상담 시 현재 상태를 확인한 뒤 필요한 회차를 안내드립니다.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">여성도 시술 가능한가요?<span>+</span></button>
+          <button class="faq-question">
+            여성도 시술 가능한가요?
+            <span>+</span>
+          </button>
           <div class="faq-answer">
             네. 정수리 비어 보임, 가르마 밀도 보완, 헤어라인 고민 등 여성 고객님도 맞춤 상담이 가능합니다.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">시술 후 바로 일상생활이 가능한가요?<span>+</span></button>
+          <button class="faq-question">
+            시술 후 바로 일상생활이 가능한가요?
+            <span>+</span>
+          </button>
           <div class="faq-answer">
             대부분 일상생활은 가능하지만, 시술 직후 며칠간은 땀, 사우나, 강한 자극을 피하는 관리가 필요합니다.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">상담만 받아도 되나요?<span>+</span></button>
+          <button class="faq-question">
+            상담만 받아도 되나요?
+            <span>+</span>
+          </button>
           <div class="faq-answer">
             네. 상담만 먼저 받아보셔도 됩니다. 현재 두피 상태와 고민 부위를 확인한 뒤 필요한 방향을 안내드립니다.
           </div>
@@ -459,7 +584,8 @@
           <a class="btn btn-kakao" href="http://pf.kakao.com/_PGZcn/chat" target="_blank">
             카카오톡 상담하기
           </a>
-          <a class="btn" href="https://www.instagram.com/miljeom.smp/" target="_blank" style="background:#050505; color:#fff;">
+
+          <a class="btn" href="https://www.instagram.com/miljeom.smp/" target="_blank" style="background:#111111; color:#ffffff;">
             인스타그램 상담하기
           </a>
         </div>
