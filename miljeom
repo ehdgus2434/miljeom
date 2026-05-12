@@ -1,0 +1,223 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { CheckCircle2, MessageCircle, MapPin, ShieldCheck, Sparkles, Camera, Clock, ChevronDown, PhoneCall } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+export default function MiljeomSmpLandingPage() {
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const faqs = [
+    {
+      q: "SMP 두피문신은 자연스럽게 보이나요?",
+      a: "밀점은 두피 상태, 모발 밀도, 헤어라인 흐름을 먼저 확인한 뒤 점의 크기와 농도를 조절해 자연스러운 밀도 표현을 목표로 시술합니다.",
+    },
+    {
+      q: "시술 전 상담만 받아도 되나요?",
+      a: "네. 현재 두피 상태와 고민 부위를 확인한 뒤 필요한 회차, 예상 디자인, 관리 방법을 안내드립니다.",
+    },
+    {
+      q: "여성도 받을 수 있나요?",
+      a: "가능합니다. 정수리 비어 보임, 가르마 밀도 보완, 출산 후 탈모 고민 등 여성 고객에게도 맞춤 상담을 진행합니다.",
+    },
+    {
+      q: "시술 후 바로 일상생활이 가능한가요?",
+      a: "대부분 일상생활은 가능하지만, 시술 직후 며칠간은 땀, 사우나, 강한 자극을 피하는 관리가 필요합니다.",
+    },
+  ];
+
+  const benefits = [
+    "대구 SMP 두피문신 전문 상담",
+    "헤어라인·정수리·가르마 맞춤 디자인",
+    "초보자도 이해하기 쉬운 1:1 상담",
+    "시술 전후 관리 방법 안내",
+  ];
+
+  return (
+    <div className="min-h-screen bg-neutral-950 text-white">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_30%)]" />
+        <div className="relative mx-auto max-w-6xl px-5 py-20 md:py-28">
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm text-amber-200">
+                <Sparkles size={16} /> 대구 두피문신 SMP 전문
+              </div>
+              <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+                비어 보이는 두피,
+                <br /> 자연스러운 밀도로 채우다
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-neutral-300">
+                밀점 SMP는 헤어라인, 정수리, 가르마 고민을 가진 고객님께
+                두피 상태에 맞는 맞춤 상담과 자연스러운 SMP 디자인을 제안합니다.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button className="h-14 rounded-2xl bg-amber-400 px-7 text-base font-bold text-neutral-950 hover:bg-amber-300">
+                  <MessageCircle className="mr-2" size={20} /> 카카오톡 상담하기
+                </Button>
+                <Button variant="outline" className="h-14 rounded-2xl border-white/20 bg-white/5 px-7 text-base text-white hover:bg-white/10">
+                  <PhoneCall className="mr-2" size={20} /> 전화 상담하기
+                </Button>
+              </div>
+              <p className="mt-4 text-sm text-neutral-400">상담 신청 시 현재 두피 사진을 함께 보내주시면 더 정확한 안내가 가능합니다.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }}>
+              <Card className="rounded-[2rem] border-white/10 bg-white/10 shadow-2xl backdrop-blur">
+                <CardContent className="p-5">
+                  <div className="aspect-[4/5] rounded-[1.5rem] bg-gradient-to-br from-neutral-800 to-neutral-700 p-6">
+                    <div className="flex h-full flex-col justify-between rounded-[1.25rem] border border-white/10 bg-neutral-950/70 p-6">
+                      <div>
+                        <div className="mb-4 inline-flex rounded-full bg-amber-400 px-3 py-1 text-sm font-bold text-neutral-950">MILJEOM SMP</div>
+                        <h2 className="text-3xl font-bold">상담 예약 접수중</h2>
+                        <p className="mt-3 text-neutral-300">두피 고민 부위 확인 후 맞춤 안내</p>
+                      </div>
+                      <div className="space-y-3">
+                        {benefits.map((item) => (
+                          <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/8 p-4">
+                            <CheckCircle2 className="text-amber-300" size={20} />
+                            <span className="text-sm text-neutral-100">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-bold text-amber-300">이런 분께 추천드립니다</p>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">두피가 비어 보이는 순간이 신경 쓰이신다면</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            ["정수리 고민", "사진 찍을 때 정수리 부분이 유독 비어 보이는 분"],
+            ["헤어라인 고민", "이마 라인, M자 라인이 신경 쓰이는 분"],
+            ["가르마 고민", "가르마가 넓어 보여 스타일링이 어려운 분"],
+          ].map(([title, desc]) => (
+            <Card key={title} className="rounded-3xl border-white/10 bg-white/[0.06]">
+              <CardContent className="p-7">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/15 text-amber-300">
+                  <Camera size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-white">{title}</h3>
+                <p className="mt-3 leading-7 text-neutral-300">{desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-neutral-900/70 px-5 py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-bold text-amber-300">WHY MILJEOM</p>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">밀점이 중요하게 보는 3가지</h2>
+            </div>
+            <div className="space-y-4">
+              {[
+                ["자연스러운 밀도", "기존 모발과 어색하지 않도록 점의 간격과 농도를 세밀하게 조절합니다."],
+                ["개인별 디자인", "두상, 모발 방향, 탈모 범위에 맞춰 과하지 않은 디자인을 제안합니다."],
+                ["상담 중심 진행", "시술 전 충분한 상담으로 고객님의 불안과 궁금증을 먼저 해소합니다."],
+              ].map(([title, desc], i) => (
+                <div key={title} className="rounded-3xl border border-white/10 bg-white/[0.06] p-6">
+                  <div className="flex gap-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-amber-400 font-bold text-neutral-950">{i + 1}</div>
+                    <div>
+                      <h3 className="text-lg font-bold">{title}</h3>
+                      <p className="mt-2 leading-7 text-neutral-300">{desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-bold text-amber-300">PROCESS</p>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">상담부터 관리까지 간단하게</h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-4">
+          {[
+            ["상담 신청", "카카오톡 또는 전화로 고민 부위 접수"],
+            ["두피 확인", "사진 또는 방문 상담으로 상태 체크"],
+            ["맞춤 제안", "디자인, 회차, 관리 방법 안내"],
+            ["시술 진행", "자연스러운 밀도 표현 중심 진행"],
+          ].map(([title, desc]) => (
+            <Card key={title} className="rounded-3xl border-white/10 bg-white/[0.06]">
+              <CardContent className="p-6">
+                <Clock className="mb-5 text-amber-300" size={26} />
+                <h3 className="text-lg font-bold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-neutral-300">{desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-16 text-neutral-950">
+        <div className="mx-auto max-w-4xl text-center">
+          <ShieldCheck className="mx-auto mb-5 text-amber-500" size={40} />
+          <h2 className="text-3xl font-bold md:text-4xl">처음이라 걱정되신다면, 상담부터 받아보세요</h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-8 text-neutral-600">
+            SMP는 두피 상태와 원하는 이미지에 따라 결과 만족도가 달라질 수 있습니다. 밀점은 무리한 시술 권유보다 고객님께 필요한 방향을 먼저 안내합니다.
+          </p>
+          <div className="mt-8 rounded-3xl bg-neutral-100 p-6 text-left">
+            <div className="flex items-start gap-3">
+              <MapPin className="mt-1 shrink-0 text-amber-500" size={22} />
+              <div>
+                <h3 className="font-bold">대구 SMP 두피문신 전문, 밀점</h3>
+                <p className="mt-2 text-neutral-600">정확한 주소, 영업시간, 상담 채널 링크를 이 영역에 입력하면 됩니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-5 py-16">
+        <div className="mb-8 text-center">
+          <p className="text-sm font-bold text-amber-300">FAQ</p>
+          <h2 className="mt-3 text-3xl font-bold">자주 묻는 질문</h2>
+        </div>
+        <div className="space-y-3">
+          {faqs.map((faq, idx) => (
+            <button key={faq.q} onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)} className="w-full rounded-3xl border border-white/10 bg-white/[0.06] p-6 text-left">
+              <div className="flex items-center justify-between gap-4">
+                <span className="font-bold">{faq.q}</span>
+                <ChevronDown className={`shrink-0 transition ${openFaq === idx ? "rotate-180" : ""}`} size={20} />
+              </div>
+              {openFaq === idx && <p className="mt-4 leading-7 text-neutral-300">{faq.a}</p>}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-5 pb-24">
+        <div className="mx-auto max-w-5xl rounded-[2rem] bg-amber-400 p-8 text-center text-neutral-950 md:p-12">
+          <h2 className="text-3xl font-black md:text-5xl">지금 두피 고민, 밀점에서 상담받아보세요</h2>
+          <p className="mt-4 text-lg text-neutral-800">상담 신청 후 현재 두피 사진을 보내주시면 맞춤 안내를 도와드립니다.</p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button className="h-14 rounded-2xl bg-neutral-950 px-8 text-base font-bold text-white hover:bg-neutral-800">
+              <MessageCircle className="mr-2" size={20} /> 카카오톡 상담하기
+            </Button>
+            <Button variant="outline" className="h-14 rounded-2xl border-neutral-950 px-8 text-base font-bold text-neutral-950 hover:bg-amber-300">
+              인스타그램 보기
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-neutral-500">
+        © MILJEOM SMP. 대구 두피문신 상담 전문. 모든 시술 결과는 개인의 두피 상태와 관리 방법에 따라 달라질 수 있습니다.
+      </footer>
+    </div>
+  );
